@@ -746,18 +746,19 @@ header.scrolled {
 
 .CLH {
 	font-size: 2.5rem; /* Base size for larger screens */
-	font-family: fantasy;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	margin: 3px 0px 5px 2px;
 	display: block;
 	font-style: normal;
 	color: #f9f9f9;
   }
   
-  /* Tablet styling */
-  @media (max-width: 768px) {
+ /* Tablet styling */
+@media (max-width: 768px) {
 	.CLH {
 	  font-size: 15rem; /* Slightly smaller font size for tablets */
 	  margin: 2px 0px 4px 2px; /* Adjust margins */
+	  padding-right: 10px; /* Add padding from the right */
 	}
   }
   
@@ -766,6 +767,7 @@ header.scrolled {
 	.CLH {
 	  font-size: 5.5rem; /* Smaller font size for phones */
 	  margin: 1px 0px 3px 2px; /* Further adjust margins */
+	  padding-right: 8px; /* Add padding from the right */
 	}
   }
   
@@ -774,6 +776,7 @@ header.scrolled {
 	.CLH {
 	  font-size: 1.2rem; /* Compact font size for very small screens */
 	  margin: 1px 0px 2px 0px; /* Minimize margins for compact display */
+	  padding-right: 5px; /* Add padding from the right */
 	}
   }
   
@@ -2157,7 +2160,7 @@ iframe {
 	.container1 {
 		height: auto;
 		flex-direction: column;
-		align-items: center;
+		align-items: left;
 		overflow-x: hidden;
 		width: 500px;
 		margin-top: 20px;
@@ -2166,7 +2169,7 @@ iframe {
 	.container2 {
 		height: auto;
 		flex-direction: column;
-		align-items: center;
+		align-items: left;
 		overflow-x: hidden;
 		width: 510px;
 		margin-top: 20px;
@@ -2175,7 +2178,7 @@ iframe {
 	.container3{
 		height: auto;
 		flex-direction: column;
-		align-items: center;
+		align-items: left;
 		overflow-x: hidden;
 		width: 510px;
 		margin-top: 20px;
