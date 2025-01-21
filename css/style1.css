@@ -476,7 +476,7 @@ header.scrolled {
 	}
 
 	#robot {
-		top: 15%; /* Move robot higher up the page */
+		top: 5%; /* Move robot higher up the page */
 		left: 50%; /* Keep it centered */
 		max-width: 70vw;
 		max-height: 80vh;
@@ -495,7 +495,7 @@ header.scrolled {
 	}
 
 	#robot {
-		top: 15%; /* Move to the top of the page */
+		top: 5%; /* Move to the top of the page */
 		left: 59%; /* Keep centered */
 		transform: translate(-50%, -50%);
 		max-width: 50vw; /* Reduce size further */
@@ -746,7 +746,7 @@ header.scrolled {
 
 .CLH {
 	font-size: 2.5rem; /* Base size for larger screens */
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family:'Times New Roman', Times, serif;
 	margin: 3px 0px 5px 2px;
 	display: block;
 	font-style: normal;
@@ -1618,9 +1618,10 @@ Base
 	}
 
 	.CLH {
-		font-size: 2.5rem;
-		margin-bottom: 0px;
-	}
+		font-size: 5.5rem; /* Smaller font size for phones */
+		margin: 1px 0px 3px 2px; /* Further adjust margins */
+		padding-right: 8px; /* Add padding from the right */
+	  }
 
 	.custom {
 		display: flex;
@@ -2154,7 +2155,7 @@ iframe {
 @media (max-width: 768px) {
 	.wrapper {
 		height: auto;
-		justify-content: center;
+		justify-content: left;
 	}
 
 	.container1 {
