@@ -756,16 +756,32 @@ header.scrolled {
  /* Tablet styling */
 @media (max-width: 768px) {
 	.CLH {
-	  font-size: 15rem; /* Slightly smaller font size for tablets */
+	  font-size: 5rem; /* Slightly smaller font size for tablets */
 	  margin: 2px 0px 4px 2px; /* Adjust margins */
 	  padding-right: 10px; /* Add padding from the right */
+	}
+  }
+ 
+  
+  @media (max-width: 540px) and (max-height: 720px) {
+	.CLH {
+	  font-size: 5rem; /* Revert to default font size */
+	  margin: 0; /* Reset margins */
+	  padding-right: 0; /* Reset padding */
+	}
+  }
+  
+  @media (max-width: 375px) and (max-height: 667px) {
+	.CLH {
+	  font-size: 1.5rem !important; /* Reduce font size for iPhone SE */
+	  margin: 2px 0px 3px 1px !important; /* Adjust margins */
 	}
   }
   
   /* Mobile styling (small phones) */
   @media (max-width: 480px) {
 	.CLH {
-	  font-size: 5.5rem; /* Smaller font size for phones */
+	  font-size: 1.5rem; /* Smaller font size for phones */
 	  margin: 1px 0px 3px 2px; /* Further adjust margins */
 	  padding-right: 8px; /* Add padding from the right */
 	}
@@ -787,7 +803,7 @@ header.scrolled {
 .blocky-text {
 	display: inline-block;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 80px; /* Base size for larger screens */
+	font-size: 50px; /* Base size for larger screens */
 	background-image: linear-gradient(45deg, #9297a0, #27fb74, #b5a470, #1ab7bf); /* Gradient color */
 	-webkit-background-clip: text; /* Clip the background to the text */
 	color: transparent; /* Make the text itself transparent */
@@ -800,6 +816,29 @@ header.scrolled {
 	.blocky-text {
 	  font-size: 20px; /* Adjust font size for tablets */
 	  letter-spacing: 2px;
+	}
+  }
+  
+  /* General style for blocky-text */
+.blocky-text {
+	font-size: 24px;
+	letter-spacing: 2px;
+	color: black;
+  }
+  
+  /* Media query for Asus Zenbook Fold (853x1280) */
+  @media (max-width: 853px) and (max-height: 1280px) {
+	.blocky-text {
+	  font-size: 18px !important; /* Reduced font size */
+	  letter-spacing: 1.5px;
+	}
+  }
+  
+  /* Media query for iPad Air (820x1180) */
+  @media (max-width: 820px) and (max-height: 1180px) {
+	.blocky-text {
+	  font-size: 16px !important; /* Reduced font size further */
+	  letter-spacing: 1.2px;
 	}
   }
   
@@ -1011,11 +1050,13 @@ header.scrolled {
 	  font-size: 2rem; /* Adjust font size for tablets */
 	  max-width: 90%; /* Use a percentage for better adaptability */
 	  margin: 15px auto;
+	  justify-content: center;
 	}
   
 	.about-para .event-name {
 	  font-size: 1.2rem; /* Slightly smaller font for tablets */
 	  margin: 8px 0;
+	  justify-content: center;
 	}
   }
   
@@ -1025,6 +1066,7 @@ header.scrolled {
 	  font-size: 1.6rem; /* Smaller font size for phones */
 	  max-width: 95%; /* Further reduce width for smaller screens */
 	  margin: 10px auto;
+	   justify-content: center;
 	}
   
 	.about-para .event-name {
@@ -1039,11 +1081,13 @@ header.scrolled {
 	  font-size: 1.4rem; /* Compact size for very small screens */
 	  line-height: 1.4; /* Reduce line height */
 	  margin: 8px auto;
+	  justify-content: center;
 	}
   
 	.about-para .event-name {
 	  font-size: 0.9rem; /* Further compact size */
 	  margin: 4px 0;
+	   justify-content: center;
 	}
   }
   
@@ -1698,8 +1742,12 @@ iframe {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center; /* Center the buttons vertically */
 		width: 100%;
-	}
+		margin-bottom: 20px; /* Add spacing from bottom of the container */
+		overflow: hidden; /* Prevent overflow issues */
+	  }
+	  
 
 	.hero-buttons a {
 		width: 50%;
@@ -2150,7 +2198,7 @@ iframe {
 
 
 /*--------------------------------------------------------------
-# Domains
+# Domains(responsive for mobile)
 --------------------------------------------------------------*/
 @media (max-width: 768px) {
 	.wrapper {
@@ -2172,7 +2220,7 @@ iframe {
 		flex-direction: column;
 		align-items: left;
 		overflow-x: hidden;
-		width: 510px;
+		width: 500px;
 		margin-top: 20px;
 	}
 	
@@ -2274,6 +2322,7 @@ iframe {
 }
 
 @media (max-width: 425px) {
+	
 	.clash {
 		width: 300px;
 		margin: 10px 0;
@@ -2282,14 +2331,49 @@ iframe {
 
 	.clash>.marvel>.description {
 		width: 300px;
+		opacity: 1 !important; /* Always visible on mobile */
+		transform: translateY(0) !important; /* Ensure it is in place */
+		transition: none; /* Disable animation for mobile */
 	}
 
 	.description h4 {
-		opacity: 1 !important;
+		opacity: 1 !important; /* Ensure text visibility */
 	}
 
 	input:checked+.clash {
-		width: 320px;
+		width: 300px; /* Consistent width */
+	}
+
+	input:checked+.clash .description {
+		opacity: 1 !important;
+		transform: translateY(0) !important;
+	}
+}
+@media (min-width: 350px) and (max-width: 690px) {
+	.clash {
+		width: 300px;
+		margin: 10px 0;
+		box-shadow: none;
+	}
+
+	.clash>.marvel>.description {
+		width: 300px;
+		opacity: 1 !important; /* Always visible on mobile */
+		transform: translateY(0) !important; /* Ensure it is in place */
+		transition: none; /* Disable animation for mobile */
+	}
+
+	.description h4 {
+		opacity: 1 !important; /* Ensure text visibility */
+	}
+
+	input:checked+.clash {
+		width: 300px; /* Consistent width */
+	}
+
+	input:checked+.clash .description {
+		opacity: 1 !important;
+		transform: translateY(0) !important;
 	}
 }
 
