@@ -27,46 +27,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//   Timer
+//Timer
 
-// function updateTimer() {
-// 	// Set the future date (change this to Dec 28 if needed)
-// 	future = Date.parse("Dec 28, 2024 8:00:00");
-// 	now = new Date();
-// 	diff = future - now;
+  const targetDate = new Date("2025-02-14T15:00:00"); // Example date and time
+  const timerElement = document.getElementById("timer");
+  const messageElement = document.getElementById("message");
 
-// 	// If the difference is negative, the event has passed
-// 	if (diff <= 0) {
-// 		document.getElementById("timer").innerHTML = "<div>Event has passed</div>";
-// 		return; // Stop further execution
-// 	}
+  function updateTimer() {
+    const now = new Date();
+    const difference = targetDate - now;
 
-// 	days = Math.floor(diff / (1000 * 60 * 60 * 24));
-// 	hours = Math.floor(diff / (1000 * 60 * 60));
-// 	mins = Math.floor(diff / (1000 * 60));
-// 	secs = Math.floor(diff / 1000);
+    if (difference <= 0) {
+      timerElement.textContent = "0 days 00:00:00";
+      messageElement.textContent = "Time's up!";
+      clearInterval(timerInterval); // Stop the timer
+      return;
+    }
 
-// 	d = days;
-// 	h = hours - days * 24;
-// 	m = mins - hours * 60;
-// 	s = secs - mins * 60;
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-// 	document.getElementById("timer").innerHTML =
-// 		"<div>" +
-// 		d +
-// 		"<span> Days</span></div>" +
-// 		"<div>" +
-// 		h +
-// 		"<span> Hours</span></div>" +
-// 		"<div>" +
-// 		m +
-// 		"<span> Minutes</span></div>" +
-// 		"<div>" +
-// 		s +
-// 		"<span> Seconds</span></div>";
-// }
+    timerElement.textContent = 
+      `Registration Ends in ${days} days ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  }
 
-// setInterval(updateTimer, 1000);
+  // Update the timer every second
+  const timerInterval = setInterval(updateTimer, 1000);
+  updateTimer(); // Initialize immediately
+
+
 
 // document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // 	anchor.addEventListener("click", function (e) {
